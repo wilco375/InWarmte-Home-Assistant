@@ -1,0 +1,10 @@
+{
+    "domain": "inwarmte",
+    "name": "InWarmte",
+    "codeowners": ["@wilco375"],
+    "config_flow": true,
+    "documentation": "https://www.home-assistant.io/integrations/inwarmte/",
+    "iot_class": "cloud_polling",
+    "loggers": ["inwarmte"],
+    "version": "1.0.0"
+}
