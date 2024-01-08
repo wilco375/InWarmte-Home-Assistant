@@ -37,18 +37,12 @@ from .const import (
 _LOGGER = logging.getLogger(__name__)
 
 
+@dataclass(frozen=True)
 class InWarmteSensorEntityDescription(SensorEntityDescription):
     """Class describing InWarmte sensor entities."""
 
-    def __init__(self, **kwargs: Any) -> None:
-        """Initialize the sensor entity description."""
-        self.sensor_type = kwargs["sensor_type"] if "sensor_type" in kwargs else ""
-        self.precision = kwargs["precision"] if "precision" in kwargs else 3
-        if "sensor_type" in kwargs:
-            del kwargs["sensor_type"]
-        if "precision" in kwargs:
-            del kwargs["precision"]
-        super().__init__(**kwargs)
+    sensor_type: str = SENSOR_TYPE_THIS_MONTH
+    precision: int = 3
 
 
 SENSORS_INFO = [
